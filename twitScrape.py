@@ -30,7 +30,7 @@ df = df[['text', 'timestamp', 'url', 'user']]
 # df.to_csv('{0}.csv'.format(today))
 df.to_sql('tweets', conn)
 c.execute("delete from tweets where user != 'realDonaldTrump'")
-
+os.system('rm "{}".json'.format(today))
 conn.commit()
 conn.close()
 #UPDATE tweets SET timestamp=DATETIME(timestamp, '-240 minutes')
