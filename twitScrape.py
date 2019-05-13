@@ -4,8 +4,8 @@ import pandas as pd
 
 # municiotion, cudlo , trump , sanders, 
 
-today = datetime.now().strftime('%Y-%m-%d %H.%M')
-os.system("twitterscraper realDonaldTrump -u -l 20 -o {0}.json".format(today))
+today = datetime.now().strftime('%Y-%m-%d %I:%M %p')
+os.system("twitterscraper realDonaldTrump -u -l 20 -o '{0}'.json".format(today))
 
 with codecs.open('{0}.json'.format(today), 'r', 'utf-8') as f:
     tweets = json.load(f, encoding='utf-8')
